@@ -96,3 +96,53 @@ Poder realizar la inscripción en las distintas clases y sus horarios con la pos
 ### 2. Abrir en el navegador http://127.0.0.1:5000/
 
 ### 4. CORREGIR LA BASE DE DATOS PARA QUE LA CONTASENA SEA VARCHAR 60 SINO NO SE PUEDE GUARDAR ENCRIPTADA
+
+```
+ProyectoCodo
+├─ app.py
+├─ derDiagram.mwb
+├─ olympiae.sql
+├─ README.md
+├─ static
+│  ├─ css
+│  │  ├─ estilos_actividades.css
+│  │  ├─ estilos_contacto.css
+│  │  ├─ estilos_index.css
+│  │  ├─ estilos_nosotros.css
+│  │  ├─ estilos_usuario.css
+│  │  ├─ estilo_barra_lateral.css
+│  │  ├─ estilo_footer.css
+│  │  ├─ estilo_registro.css
+│  │  └─ fuentesycolores.css
+│  ├─ imagenes
+│  │  ├─ Codigos_Solares.jpg
+│  │  ├─ Flor.png
+│  │  ├─ HathaYoga.jpg
+│  │  ├─ Kundalini Yoga.jpg
+│  │  ├─ logo.png
+│  │  ├─ minilogo.png
+│  │  ├─ pendulo.jpg
+│  │  ├─ Registros_Akashicos.jpg
+│  │  ├─ Reiki01.jpg
+│  │  ├─ RestorativeYoga.jpg
+│  │  ├─ Rito01.jpg
+│  │  ├─ Rito01.webp
+│  │  ├─ Rito02.jpg
+│  │  ├─ Yoga01.jpg
+│  │  └─ Yoga02.jpg
+│  └─ js
+│     ├─ formspreeContacto.js
+│     ├─ formspreeRegistro.js
+│     ├─ script.js
+│     ├─ validacionContacto.js
+│     └─ validacionLogin.js
+└─ templates
+   ├─ actividades.html
+   ├─ contacto.html
+   ├─ index.html
+   ├─ login.html
+   ├─ nosotros.html
+   ├─ registrarse.html
+   └─ usuario.html
+
+```

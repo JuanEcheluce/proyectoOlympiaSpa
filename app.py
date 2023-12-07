@@ -186,7 +186,9 @@ database = Database(host='localhost', user='root', password='1234', database='ol
 usuario = Usuario(database)
 print(usuario)
 
-#----------- Rutas ------------------
+
+                
+#----------------------------------------------------------------
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")

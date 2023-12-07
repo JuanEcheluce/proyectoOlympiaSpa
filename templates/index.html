@@ -96,19 +96,19 @@
           </div>
           {% if session.id_usuario %}
             <button class="boton-ingresar" onclick="window.location.href='/logout'">
-              <ion-icon name="log-in-outline"></ion-icon>
+              <ion-icon name="log-out-outline"></ion-icon>
               <span>Salir</span>
             </button>
             <button class="boton-perfil" onclick="window.location.href='/usuario'">
               <ion-icon name="person-outline"></ion-icon>
               <span>Mi perfil</span>
             </button>
-        {% else %}
+          {% else %}
               <button class="boton-ingresar" onclick="window.location.href='/login'">
             <ion-icon name="log-in-outline"></ion-icon>
             <span>Ingresar</span>
             </button>
-            {% endif %}
+          {% endif %}
         </div>
         <nav class="navegacion">
           <ul>

@@ -111,13 +111,13 @@
     justify-content: center; /*Centrar elementos*/
     border: none; /*Borrar borde*/
     border-radius: 10px; /*Redondear boton*/
-    color: black;/*Color de fondo en variable*/
+    background-color: var(--color-boton-login);
     color: var(--color-boton-texto); /*Color texto en variable*/
 }
 
 .boton-perfil:hover{
-    background-color: lightgray; /*Color de fondo en variable*/
-    color: var(--color-boton-texto); /*Color texto en variable*/
+    background-color: var(--color-scroll-hover); /*Color de fondo en variable*/
+    color: var(--color-texto); /*Color texto en variable*/
     cursor: pointer;
 }
 
@@ -129,7 +129,7 @@
 /*Menu navegacion*/
 .activo{
     background-color: var(--color-menu-hover);
-    color: var(--color-menu-hover-texto);
+    color: white;
 }
 
 .barra-lateral .navegacion{

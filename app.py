@@ -84,13 +84,20 @@ class Usuario:
     def mostrar_cursos(self):
         try: 
             if usuario:
-                sql =   '''
+                
+                '''sql =   
                     SELECT C.id_cursos AS IdCurso, C.nombre_curso AS NombreCurso, GROUP_CONCAT(DH.dias_y_horarios) AS Horarios
                     FROM cursos AS C
                     JOIN cursos_dias_horarios AS CDH ON C.id_cursos = CDH.fk_id_cursos
                     JOIN dias_y_horarios AS DH ON CDH.fk_id_dias_y_horarios = DH.id_dias_y_horarios
                     GROUP BY C.id_cursos, C.nombre_curso
                     '''
+                
+                sql =   (f"SELECT C.id_cursos AS IdCurso, C.nombre_curso AS NombreCurso, GROUP_CONCAT(DH.dias_y_horarios) AS Horarios "
+                        f"FROM cursos AS C "
+                        f"JOIN cursos_dias_horarios AS CDH ON C.id_cursos = CDH.fk_id_cursos "
+                        f"JOIN dias_y_horarios AS DH ON CDH.fk_id_dias_y_horarios = DH.id_dias_y_horarios "
+                        f"GROUP BY C.id_cursos, C.nombre_curso")
                 self.db.cursor.execute(sql)
                 cursos_horarios = self.db.cursor.fetchall()
                 print (cursos_horarios)
@@ -179,9 +186,7 @@ database = Database(host='localhost', user='root', password='1234', database='ol
 usuario = Usuario(database)
 print(usuario)
 
-
-                
-#----------------------------------------------------------------
+#----------- Rutas ------------------
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
@@ -247,8 +252,6 @@ def info_usuario():
         id_usuario = int(session['id_usuario'])
         datos_usuario = usuario.mostrar_usuario(id_usuario)
         cursos_horarios = usuario.mostrar_cursos()
-        print (cursos_horarios)
-        #info_usuario = {'id_usuario': id_usuario,'data_usuario': usuario, 'inscripciones': cursos}
         return render_template("usuario.html", usuario=datos_usuario, cursos = cursos_horarios)
     else:
         return redirect(url_for('login'))
@@ -257,13 +260,9 @@ def info_usuario():
 def reserva_lugar():
     if 'id_usuario' in session:
         curso = request.form.get('curso')  # Para datos en formato x-www-form-urlencoded
-        horario = request.form.get('horario')  # Para datos en formato x-www-form-urlencoded
+        horario = request.form.get('horario')  
         id_usuario = request.form.get('idusuario')
         id_curso = request.form.get('idcurso')
-        print(f"Curso recibido: {curso}")
-        print(f"ID Curso recibido: {id_curso}")
-        print(f"Horario recibido: {horario}")
-        print(f"ID usuario reserva: {id_usuario}")
         
         usuario.guardar_reserva(id_usuario,id_curso,horario)
     
@@ -273,15 +272,10 @@ def reserva_lugar():
 @app.route("/cancelar_reserva", methods=["DELETE"])
 def cancelar_reserva():
     if 'id_usuario' in session:
-        #id_usuario = int(session['id_usuario'])
         curso = request.form.get('curso')  # Para datos en formato x-www-form-urlencoded
-        horario = request.form.get('horario')  # Para datos en formato x-www-form-urlencoded
+        horario = request.form.get('horario')  
         id_usuario = request.form.get('idusuario')
         id_curso = request.form.get('idcurso')
-        print(f"Curso cancelado: {curso}")
-        print(f"ID Curso cancelado: {id_curso}")
-        print(f"Horario: {horario}")
-        print(f"ID usuario: {id_usuario}")
 
         usuario.cancelar_reserva(id_usuario,id_curso,horario)
 
@@ -293,15 +287,7 @@ def logout():
     return redirect(url_for('index'))
 
 
-
-#----------------PRUEBAS---------------------------------------------
-
-
-#print(usuario.mostrar_usuario(2))
-#print(usuario.registrarse("miguel", "vincent", "mmppppp@h.com", 1234566666, 1))
-
-
 # # #--------------------------------------------------------------------
 if __name__ == "__main__":
-   app.run(debug=True)
+    app.run(debug=True)
 # # #--------------------------------------------------------------------

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `olympiae` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `olympiae`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: olympiae
@@ -105,7 +107,7 @@ CREATE TABLE `usuario_cursos` (
   PRIMARY KEY (`id_usuario_cursos`),
   KEY `fk_id_usuario_idx` (`fk_id_usuario`),
   KEY `fk_id_curso_dias_horarios_idx` (`fk_id_cursos_dias_horarios`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-04 10:12:18
+-- Dump completed on 2023-12-04 10:40:09

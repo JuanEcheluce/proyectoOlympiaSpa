@@ -8,29 +8,26 @@
     {% block content %}
           <section id="cursos">
             <div class="contenedor_cursos">
-                <h2>Nuestros horarios</h2>
-                <p class="clases">Clases de Yoga</p>
-                <div class="grid-container_clases">
-
-                        {% for curso in cursos %}
-                        <div class="tipo-yoga">
-                            <strong class="tipo-horarios">{{ curso['NombreCurso'] }}</strong>
-                            <table>
-                                {% for horario in curso['Horarios'].split(',') %}
-                                    <tr class="cada_horario">
-                                        <td>{{ horario }}
-                                            {% if session.id_usuario %}
-                                                <button class="reserva" ><a href="/usuario">Reservar</a></button>
-                                            {% else %}
-                                                <button class="reserva" ><a href="/login">Reservar</a></button>
-                                            {% endif %}
-                                            
-                                        </td></tr>
-                                        
-                                {% endfor %}
-                            </table>
+                <h2>Horarios de nuestras actividades</h2>
+                <div class="contenedor_clases">
+                    {% for curso in cursos %}
+                        <div class="cada-curso">
+                        <strong class="nombre-curso">{{ curso['NombreCurso'] }}</strong><br>
+                           
+                            {% for horario in curso['Horarios'].split(',') %}
+                                <strong>{{ horario }}</strong><br>
+                            {% endfor %}
+                            
                         </div>
-                        {% endfor %}
+                    {% endfor %}
+                    
+                </div>
+                {% if session.id_usuario %}
+                        <button class="reserva" onclick="window.location.href='/usuario'">Reservá tu lugar!!!</button>
+                    {% else %}
+                        <button class="reserva" onclick="window.location.href='/login'">Reservá tu lugar!!!</button>
+                    {% endif %}
+            </div>
         </section>
         {% endblock %}
     </main>

@@ -50,7 +50,7 @@ class Usuario:
     def __init__(self,database):
         self.db = database
     def __str__(self):
-        return "database connection: host='127.0.0.1', user='root', password= '1234', database='olympiae' "
+        return "database connection: host='127.0.0.1', user='root', password= '', database='olympiae' "
     def mostrar_usuario(self, id_usuario):
         try: 
             sql = f"SELECT nombre_completo, apellido, correo_electronico, tipo_usuario FROM usuarios where id_usuario = {id_usuario}"
@@ -83,16 +83,7 @@ class Usuario:
     
     def mostrar_cursos(self):
         try: 
-            if usuario:
-                
-                '''sql =   
-                    SELECT C.id_cursos AS IdCurso, C.nombre_curso AS NombreCurso, GROUP_CONCAT(DH.dias_y_horarios) AS Horarios
-                    FROM cursos AS C
-                    JOIN cursos_dias_horarios AS CDH ON C.id_cursos = CDH.fk_id_cursos
-                    JOIN dias_y_horarios AS DH ON CDH.fk_id_dias_y_horarios = DH.id_dias_y_horarios
-                    GROUP BY C.id_cursos, C.nombre_curso
-                    '''
-                
+            if usuario:                
                 sql =   (f"SELECT C.id_cursos AS IdCurso, C.nombre_curso AS NombreCurso, GROUP_CONCAT(DH.dias_y_horarios) AS Horarios "
                         f"FROM cursos AS C "
                         f"JOIN cursos_dias_horarios AS CDH ON C.id_cursos = CDH.fk_id_cursos "

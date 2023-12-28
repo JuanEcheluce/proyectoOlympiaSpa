@@ -4,66 +4,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="/static/imagenes/minilogo.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Ubuntu:ital,wght@0,300;0,700;1,300;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="static/css/estilo_barra_lateral.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="static/css/estilo_footer.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="static/css/estilo_registro.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="static/css/estilos_actividades.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="static/css/estilos_contacto.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="static/css/estilos_index.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="static/css/estilos_nosotros.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="static/css/estilos_usuario.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="static/css/fuentesycolores.css"
-    />
+    <link rel="shortcut icon" href="/static/imagenes/minilogo.png" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Ubuntu:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilo_barra_lateral.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilo_footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilo_registro.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos_actividades.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos_contacto.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos_index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos_nosotros.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos_usuario.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/fuentesycolores.css"/>
     {% block title %}
-    <title>Inicio</title>
+      <title>Inicio</title>
     {% endblock %}
   </head>
   {% endblock %}
@@ -75,24 +29,11 @@
         <ion-icon name="menu-outline"></ion-icon>
         <ion-icon name="close-outline"></ion-icon>
       </div>
-      <div
-        class="barra-lateral barra-lateral-activar"
-        id="barra-lateral-activar"
-      >
+      <div class="barra-lateral barra-lateral-activar" id="barra-lateral-activar">
         <div class="barra-lateral-activar">
           <div class="nombre-pagina barra-lateral-activar">
-            <ion-icon
-              name="menu-outline"
-              class="barra-lateral-activar"
-            ></ion-icon>
-            <span
-              ><a href="/"
-                ><img
-                  src="static/imagenes/Logo.png"
-                  alt=""
-                  width="20px"
-                  height="60px" /></a
-            ></span>
+            <ion-icon name="menu-outline" class="barra-lateral-activar"></ion-icon>
+            <span><a href="/"><img src="static/imagenes/Logo.png" alt="" width="20px" height="60px" /></a></span>
           </div>
           {% if session.id_usuario %}
             <button class="boton-ingresar" onclick="window.location.href='/logout'">
@@ -105,9 +46,9 @@
             </button>
           {% else %}
               <button class="boton-ingresar" onclick="window.location.href='/login'">
-            <ion-icon name="log-in-outline"></ion-icon>
-            <span>Ingresar</span>
-            </button>
+                <ion-icon name="log-in-outline"></ion-icon>
+                <span>Ingresar</span>
+              </button>
           {% endif %}
         </div>
         <nav class="navegacion">
